@@ -15,15 +15,15 @@ public class GraphQLDataFetchers {
             ImmutableMap.of("id", "order-1",
                     "name", "Butter Chicken",
                     "veg", "No",
-                    "paymentID","payment-1"),
+                    "paymentID", "payment-1"),
             ImmutableMap.of("id", "order-2",
                     "name", "Shahi Paneer",
                     "veg", "Yes",
-                    "paymentID","payment-2"),
+                    "paymentID", "payment-2"),
             ImmutableMap.of("id", "order-3",
                     "name", "Chicken Lollipop",
                     "veg", "No",
-                    "paymentID","payment-3")
+                    "paymentID", "payment-3")
     );
 
     private static List<Map<String, String>> payment = Arrays.asList(
@@ -36,7 +36,7 @@ public class GraphQLDataFetchers {
             ImmutableMap.of("id", "payment-3",
                     "price", "240",
                     "status", "Pending")
-            );
+    );
 
     public DataFetcher getOrderByIdDataFetcher() {
         return dataFetchingEnvironment -> {
@@ -49,9 +49,9 @@ public class GraphQLDataFetchers {
         };
     }
 
-    public DataFetcher getPaymentByIdDataFetcher(){
+    public DataFetcher getPaymentByIdDataFetcher() {
         return dataFetchingEnvironment -> {
-            Map<String,String> order = dataFetchingEnvironment.getSource();
+            Map<String, String> order = dataFetchingEnvironment.getSource();
             String paymentID = order.get("paymentID");
             return payment
                     .stream()
