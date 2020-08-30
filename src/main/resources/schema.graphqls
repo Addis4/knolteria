@@ -1,0 +1,17 @@
+type Query {
+    orderById(id: ID): Menu
+}
+
+type Menu {
+    id: ID
+    name: String
+    price: Int
+    veg: String
+    payment: Payment
+}
+
+type Payment {
+    id: ID
+    price: Int
+    status: String
+}
